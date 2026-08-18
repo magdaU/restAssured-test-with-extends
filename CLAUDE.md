@@ -48,3 +48,23 @@ This is a pure test project — there is no production `main` source code, only 
 
 - **VideoGame DB**: `https://videogamedb.uk/api/v2/` — read-only; write operations (POST/PUT/DELETE) are accepted but not persisted. Swagger: `https://videogamedb.uk/swagger-ui/index.html`
 - **Football Data**: `https://api.football-data.org/v4/` — requires a free API token from football-data.org. Without a token, requests return 403.
+
+## How I Use AI in This Project
+
+This project is developed with AI assistance (Claude Code), used deliberately and transparently rather than hidden.
+
+**What I generate with AI's help:**
+- Documentation (README sections, this file)
+- Refactoring and cleanup of existing code
+- Test boilerplate (class/method scaffolding, setup, annotations)
+
+**What I always verify manually before accepting a change:**
+- The full diff, before every commit — nothing gets committed unreviewed
+- Assertion logic in tests — that a test actually checks what it claims to
+- Links and URLs — badges, report links, CI links (this repo previously had stale links after a GitHub repo rename, which required checking live URL status rather than trusting what was written)
+- Security — no secrets or tokens ever committed
+
+**Where AI falls short for this kind of work:**
+- Hallucinating repo/link state — assuming a URL or file exists without checking it against the live repo
+- Missing business context — producing a technically valid fix without knowing the actual priority or intent behind a request
+- Live, third-party APIs (e.g. football-data.org) — flaky, rate-limited, or stateful behavior that AI can't reliably reason about without running the tests
