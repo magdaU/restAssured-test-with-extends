@@ -13,14 +13,10 @@ Originally based on the [Rest Assured Fundamentals](https://www.udemy.com/course
 > - **POJO improvements** — added `toString()`, fixed field consistency
 > - **Maven configuration** — dependency versions extracted to properties, added Surefire plugin
 
-[![Allure Report](https://img.shields.io/badge/Allure_Report-view%20results-orange)](https://magdau.github.io/restAssured-tutorial-with-extends/)
-[![CI](https://github.com/magdaU/restAssured-tutorial-with-extends/actions/workflows/allure-report.yml/badge.svg)](https://github.com/magdaU/restAssured-tutorial-with-extends/actions/workflows/allure-report.yml)
+[![Allure Report](https://img.shields.io/badge/Allure_Report-view%20results-orange)](https://magdau.github.io/restAssured-test-with-extends/)
+[![CI](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml/badge.svg)](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml)
 
-**Live Allure Report:** https://magdau.github.io/restAssured-tutorial-with-extends/
-
-## 📈 Allure Trend
-
-![Allure Trend](docs/allure-trend.png)
+**Live Allure Report:** https://magdau.github.io/restAssured-test-with-extends/
 
 ---
 ## 📋 Technology Stack
@@ -705,7 +701,7 @@ mvn allure:serve                 # open in browser
 **Fix:** Added a GitHub Actions workflow (`.github/workflows/allure-report.yml`) that triggers on every push to `main`. It runs all non-Football tests, generates the Allure report, and deploys it to GitHub Pages via the `gh-pages` branch using `peaceiris/actions-gh-pages`.
 
 The live report is always available at:  
-👉 **https://magdau.github.io/restAssured-tutorial-with-extends/**
+👉 **https://magdau.github.io/restAssured-test-with-extends/**
 
 ---
 

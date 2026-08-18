@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>restAssured-tutorial</name>
-  <url>https://magdau.github.io/restAssured-tutorial-with-extends/</url>
+  <url>https://magdau.github.io/restAssured-test-with-extends/</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
