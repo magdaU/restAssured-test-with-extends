@@ -23,6 +23,9 @@ mvn -Dtest=FootbalTests test
 
 # Or pass the token as a Maven property
 mvn -Dfootball.api.token="your-token" -Dtest=FootbalTests test
+
+# Run the k6 load test (requires the k6 CLI, not a Maven dependency)
+k6 run performance/videogame-load-test.js
 ```
 
 ## Architecture
@@ -43,6 +46,8 @@ This is a pure test project — there is no production `main` source code, only 
 **POJO**: `objects/VideoGame.java` is used for Jackson serialization (request body) and deserialization (`response.getBody().as(VideoGame.class)`).
 
 **Schema files** (`src/main/java/resources/`): `VideoGameJsonSchema.json` and `VideoGameXSD.xsd` are loaded from the classpath during schema validation tests.
+
+**Performance testing** (`performance/videogame-load-test.js`): a k6 load test against the VideoGame DB API only (public, unauthenticated, safe to load-test — unlike the rate-limited Football API). Not part of the Maven build; run via the standalone k6 CLI. CI trigger is manual (`workflow_dispatch` in `.github/workflows/k6-load-test.yml`).
 
 ## APIs Under Test
 

@@ -1,0 +1,16 @@
+name: k6 Load Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run k6 load test against VideoGame DB API
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: performance/videogame-load-test.js

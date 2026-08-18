@@ -506,6 +506,28 @@ Go to **Actions → Allure Report → Run workflow** to trigger a fresh run with
 
 ---
 
+## ⚡ Performance Testing (k6)
+
+A [k6](https://k6.io/) load test (`performance/videogame-load-test.js`) complements the functional REST Assured suite by checking how the **VideoGame DB API** behaves under concurrent load.
+
+- **VideoGame DB only** — it's public, read-only, and unauthenticated, so it's safe to load-test. The **Football Data API is excluded**: it requires a token and is rate-limited to 10 requests/minute on the free tier, so a load test would just return HTTP 429 immediately and prove nothing.
+- **Load profile**: ramps 0→10 virtual users over 30s, holds 10 VUs for 30s, ramps back down over 10s — light enough to be a respectful load against a shared third-party sandbox.
+- **Thresholds**: `p(95) < 1000ms` response time and `<1%` error rate. The latency threshold deliberately matches the `assertOnResponseTime` SLA already asserted in `VideoGameTests`, so the same 1000ms performance bar is checked both functionally (single request) and under load.
+
+### Run locally
+
+Requires the [k6 CLI](https://k6.io/docs/get-started/installation/) installed separately (it's a standalone binary, not a Maven dependency).
+
+```powershell
+k6 run performance/videogame-load-test.js
+```
+
+### Run in CI
+
+Go to **Actions → k6 Load Test → Run workflow**. It's triggered manually (`workflow_dispatch`) rather than on every push, to avoid hammering the shared sandbox API for changes unrelated to performance.
+
+---
+
 ## ▶️ Running Tests
 
 ### All tests
@@ -646,6 +668,7 @@ mvn -Dtest=FootbalTests test
 | 8 | `@Step` annotations in Allure for multi-step tests (`VideoGameTests`) | ✅ Done |
 | 9 | Parameterized tests — valid IDs 1-5 and invalid IDs (`@RunWith(Parameterized.class)`) | ✅ Done |
 | 10 | Allure historical trend — `history/` preserved between CI runs via `gh-pages` branch | ✅ Done |
+| 11 | k6 performance/load testing for VideoGame DB API | ✅ Done |
 
 ---
 
