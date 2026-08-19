@@ -45,6 +45,9 @@ jobs:
       - name: Run tests
         run: mvn "-Dtest=VideoGameTests,VideoGameNegativeTests,VideoGameParameterizedTests,VideoGameNegativeParameterizedTests,GpathJSONTest,GpathXMLTests,MyFirstVideoGame" test
 
+      - name: Add Allure environment and categories
+        run: cp allure-config/environment.properties allure-config/categories.json target/allure-results/
+
       - name: Generate Allure report
         run: mvn allure:report
 

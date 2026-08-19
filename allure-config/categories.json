@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Missing Football API token (expected)",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*[Ee]xpected status code <200> but was <403>.*"
+  },
+  {
+    "name": "Product defects",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Test defects",
+    "matchedStatuses": ["broken"]
+  }
+]
