@@ -552,12 +552,17 @@ mvn -Dtest=GpathXMLTests test
 # Run tests (results saved to target/allure-results/)
 mvn -Dtest=VideoGameTests test
 
+# Add Environment and Categories widgets (optional, see allure-config/)
+cp allure-config/environment.properties allure-config/categories.json target/allure-results/
+
 # Generate static HTML report → target/site/allure-maven-plugin/index.html
 mvn allure:report
 
 # Open live report in browser (auto-starts a local server)
 mvn allure:serve
 ```
+
+`allure-config/environment.properties` and `allure-config/categories.json` populate the report's **Environment** widget (base URIs, framework/tool versions) and **Categories** widget (groups the known Football-API-403-without-token failures separately from real product/test defects). Copy them into `target/allure-results/` before generating the report — Allure reads both files from the results directory, not the classpath.
 
 ---
 
