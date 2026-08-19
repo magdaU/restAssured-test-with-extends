@@ -1,1 +1,1 @@
-[]
+[{"values":["https://videogamedb.uk/api/v2/"],"name":"VideoGame.DB.Base.URI"},{"values":["https://api.football-data.org/v4"],"name":"Football.Data.Base.URI"},{"values":["REST Assured 5.3.0 + JUnit 4"],"name":"Test.Framework"},{"values":["2.27.0"],"name":"Allure.Version"},{"values":["18"],"name":"Java.Version"},{"values":["GitHub Actions (ubuntu-latest)"],"name":"CI"}]
