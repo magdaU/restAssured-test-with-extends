@@ -8,7 +8,7 @@ Originally based on the [Rest Assured Fundamentals](https://www.udemy.com/course
 > - **Allure Reporting** — test results published automatically via GitHub Pages with historical trend
 > - **GitHub Actions CI** — automated test execution on every push and pull request
 > - **Refactored test structure** — improved assertions, contract tests, data quality checks
-> - **New test classes** — `VideoGameNegativeTests`, `GpathVideoGameTests`, `VideoGameXmlTests`
+> - **New test classes** — `VideoGameNegativeTests`, `VideoGameParameterizedTests`, `VideoGameNegativeParameterizedTests`
 > - **Dynamic token handling** — Football API token loaded from environment variable or JVM property
 > - **POJO improvements** — added `toString()`, fixed field consistency
 > - **Maven configuration** — dependency versions extracted to properties, added Surefire plugin
