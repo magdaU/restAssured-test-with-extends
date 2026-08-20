@@ -1,9 +1,8 @@
-# REST Assured Fundamentals
+# Java API Test Automation Framework
 
-A Java-based API test project using the **REST Assured** library.  
-Originally based on the [Rest Assured Fundamentals](https://www.udemy.com/course/rest-assured-fundamentals/?referralCode=2A76479D71A62609414D) course on Udemy and extended as part of a personal portfolio.
+A Java-based API test automation project using REST Assured, focused on functional API testing, negative scenarios, contract/schema validation, data-driven testing, performance testing, CI/CD and automated reporting.
 
-> 📌 **This project goes beyond the original tutorial.** Independently added: Allure reporting with historical trend, GitHub Actions CI, k6 load testing, negative and parameterized tests, dynamic Football API token handling, and refactored test structure.
+The project demonstrates a layered approach to API test automation against publicly available REST APIs, with an emphasis on test coverage, maintainability, risk-based decisions and reliable reporting.
 
 [![Allure Report](https://img.shields.io/badge/Allure_Report-view%20results-orange)](https://magdau.github.io/restAssured-test-with-extends/)
 [![CI](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml/badge.svg)](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml)
@@ -138,3 +137,9 @@ The k6 load test runs on manual trigger only (`Actions → k6 Load Test → Run 
 | 10 | Allure historical trend — `history/` preserved between CI runs |
 | 11 | k6 performance/load testing for VideoGame DB API |
 | 12 | Allure report Environment and Categories widgets |
+
+---
+
+## 📚 Project Background
+
+The first version of this project started from the [Rest Assured Fundamentals](https://www.udemy.com/course/rest-assured-fundamentals/?referralCode=2A76479D71A62609414D) course on Udemy. Since then it's been independently developed and extended well past the original tutorial scope — Allure reporting with historical trend, GitHub Actions CI, k6 load testing, negative and parameterized tests, contract/schema validation, dynamic Football API token handling, and a full test strategy, among other things (see [Completed Improvements](#-completed-improvements) above and [TEST_STRATEGY.md](TEST_STRATEGY.md)).
