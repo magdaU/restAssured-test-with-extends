@@ -1,4 +1,3 @@
-
 # REST Assured Fundamentals
 
 A Java-based API test project using the **REST Assured** library.  
@@ -19,6 +18,25 @@ Originally based on the [Rest Assured Fundamentals](https://www.udemy.com/course
 **Live Allure Report:** https://magdau.github.io/restAssured-test-with-extends/
 
 ---
+
+## 📑 Table of Contents
+
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Video Game API](#-video-game-api)
+- [Football API](#-football-api)
+- [GPath Tests](#-gpath-tests)
+- [Test Cases](#-test-cases)
+- [CI/CD & Allure Report on GitHub Pages](#-cicd--allure-report-on-github-pages)
+- [Performance Testing (k6)](#-performance-testing-k6)
+- [Running Tests](#-running-tests)
+- [Maven Dependencies](#-maven-dependencies)
+- [Useful Tools](#-useful-tools)
+- [Completed Improvements](#-completed-improvements)
+- [Improvement Details](#-improvement-details)
+
+---
+
 ## 📋 Technology Stack
 
 | Technology            | Version  |
@@ -184,13 +202,10 @@ Querying XML responses using **GPath** and **XmlPath** against the **VideoGame A
 
 ## 🧪 Test Cases
 
-Detailed business-level descriptions of each test with step-by-step scenarios.
+Detailed business-level descriptions of each test with step-by-step scenarios. Each class is collapsed by default — click a summary line to expand it.
 
----
-
-### 🎮 VideoGameTests
-
----
+<details>
+<summary><strong>🎮 VideoGameTests</strong> — 10 scenarios</summary>
 
 #### `getAllGames`
 | | |
@@ -293,11 +308,10 @@ Detailed business-level descriptions of each test with step-by-step scenarios.
 | **Step 3** | Assert that response time is less than `1000 ms` |
 | **Expected** | API responds within the defined SLA threshold |
 
----
+</details>
 
-### ⚽ FootbalTests
-
----
+<details>
+<summary><strong>⚽ FootbalTests</strong> — 7 scenarios</summary>
 
 #### `getDetailsOneAre`
 | | |
@@ -377,11 +391,10 @@ Detailed business-level descriptions of each test with step-by-step scenarios.
 | **Step 5** | Assert the list is not empty and print all team names |
 | **Expected** | All Premier League team names are returned in a list |
 
----
+</details>
 
-### 🔍 GpathJSONTest
-
----
+<details>
+<summary><strong>🔍 GpathJSONTest</strong> — 5 scenarios</summary>
 
 #### `extractMapOfElementsWithFind`
 | | |
@@ -431,11 +444,10 @@ Detailed business-level descriptions of each test with step-by-step scenarios.
 | **Step 3** | Print the result |
 | **Expected** | The total sum of all game IDs is returned as a number |
 
----
+</details>
 
-### 🔍 GpathXMLTests
-
----
+<details>
+<summary><strong>🔍 GpathXMLTests</strong> — 4 scenarios</summary>
 
 #### `getFirstGameInList`
 | | |
@@ -474,6 +486,8 @@ Detailed business-level descriptions of each test with step-by-step scenarios.
 | **Step 2** | Apply GPath `List.item.find { it.name == 'Resident Evil 4' }.name` |
 | **Step 3** | Assert the returned name equals `"Resident Evil 4"` |
 | **Expected** | The game name 'Resident Evil 4' is found and matches exactly |
+
+</details>
 
 ---
 
@@ -659,7 +673,7 @@ mvn -Dtest=FootbalTests test
 
 ---
 
-## ✅ To Do
+## ✅ Completed Improvements
 
 | # | Improvement | Status |
 |---|-------------|--------|
@@ -678,7 +692,7 @@ mvn -Dtest=FootbalTests test
 
 ---
 
-## 🛠️ Improvements
+## 🛠️ Improvement Details
 
 ### 1. Runtime API token injection (`FootballConfig`)
 
