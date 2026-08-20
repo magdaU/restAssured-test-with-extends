@@ -13,6 +13,16 @@ Originally based on the [Rest Assured Fundamentals](https://www.udemy.com/course
 
 ---
 
+## 🎯 What This Project Demonstrates
+
+- **API testing** — functional, negative, and boundary-value/parameterized testing (CRUD, status codes, response fields, response time)
+- **Contract validation** — JSON Schema and XSD validation against live responses
+- **Query & data** — JsonPath/XmlPath/GPath querying, POJO (de)serialization with Jackson
+- **Non-functional testing** — k6 load testing with an SLA-aligned latency threshold
+- **Engineering practices** — CI/CD (GitHub Actions), Allure reporting with historical trend, runtime token injection, risk-based test scoping
+
+---
+
 ## 📋 Technology Stack
 
 | Technology            | Version  |
