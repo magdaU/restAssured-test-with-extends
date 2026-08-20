@@ -674,6 +674,7 @@ mvn -Dtest=FootbalTests test
 | 9 | Parameterized tests — valid IDs 1-5 and invalid IDs (`@RunWith(Parameterized.class)`) | ✅ Done |
 | 10 | Allure historical trend — `history/` preserved between CI runs via `gh-pages` branch | ✅ Done |
 | 11 | k6 performance/load testing for VideoGame DB API | ✅ Done |
+| 12 | Allure report Environment and Categories widgets | ✅ Done |
 
 ---
 
@@ -796,3 +797,19 @@ getSingleGame_InvalidId_Returns404[gameId = 99999]
 **Fix:** The workflow now checks out the `gh-pages` branch at the start of each run and copies the `history/` folder from the previous report into `target/allure-results/history/` before generating the new report. Allure reads this folder during report generation and produces a populated trend graph. After publishing, the new `history/` is pushed to `gh-pages` as part of the report, ready for the next run.
 
 The deployment was switched from `actions/upload-pages-artifact` + `actions/deploy-pages` (GitHub Actions source) to `peaceiris/actions-gh-pages` (branch source), which makes the full report — including `history/` — accessible on the `gh-pages` branch between runs.
+
+---
+
+### 11. k6 performance/load testing
+
+**Problem:** The REST Assured suite only verifies functional correctness one request at a time — it says nothing about how the API behaves under concurrent load.
+
+**Fix:** Added a k6 load test (`performance/videogame-load-test.js`) targeting the VideoGame DB API — public and unauthenticated, unlike the token-gated, rate-limited Football API which would just return 429s under load. Ramps up to 10 VUs over ~70s, asserting `p(95)<1000ms` (mirroring the existing `assertOnResponseTime` SLA in `VideoGameTests`) and an error rate under 1%. Runs standalone via the k6 CLI (`k6 run performance/videogame-load-test.js`), not part of the Maven build. CI trigger is manual (`workflow_dispatch` in `.github/workflows/k6-load-test.yml`) to avoid hammering the shared sandbox API on every push.
+
+---
+
+### 12. Allure report Environment and Categories widgets
+
+**Problem:** The Allure report gave no context about what was actually tested, and every failure — including the expected Football-API-403-without-token ones — was lumped into the generic "Product defects" bucket, making it hard to tell real regressions from known, expected failures at a glance.
+
+**Fix:** Added `allure-config/environment.properties`, which populates the report's Environment widget with the API base URIs and framework/tool versions, and `allure-config/categories.json`, which defines a custom category that groups the known Football-API-403-without-token failures separately from real product/test defects. Both files are copied into `target/allure-results/` before report generation — in CI and documented for local use.
