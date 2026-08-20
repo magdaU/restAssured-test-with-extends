@@ -8,7 +8,8 @@ Originally based on the [Rest Assured Fundamentals](https://www.udemy.com/course
 [![Allure Report](https://img.shields.io/badge/Allure_Report-view%20results-orange)](https://magdau.github.io/restAssured-test-with-extends/)
 [![CI](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml/badge.svg)](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml)
 
-**Live Allure Report:** https://magdau.github.io/restAssured-test-with-extends/
+**Live Allure Report:** https://magdau.github.io/restAssured-test-with-extends/  
+**Test Strategy:** see [TEST_STRATEGY.md](TEST_STRATEGY.md) for the reasoning behind what's tested, how, and what's deliberately out of scope.
 
 ---
 
