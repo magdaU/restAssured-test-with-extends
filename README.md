@@ -1,4 +1,4 @@
-# Java API Test Automation Framework
+# REST API Test Automation with Java & REST Assured
 
 A Java-based API test automation project using REST Assured, focused on functional API testing, negative scenarios, contract/schema validation, data-driven testing, performance testing, CI/CD and automated reporting.
 
