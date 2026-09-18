@@ -1,0 +1,35 @@
+<div>POST to https://videogamedb.uk/api/v2/videogame</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;category&quot;: &quot;Shgoter&quot;,
+    &quot;name&quot;: &quot;MyAwesomeGame&quot;,
+    &quot;rating&quot;: &quot;Mature&quot;,
+    &quot;releaseDate&quot;: &quot;2018-01-01&quot;,
+    &quot;reviewScore&quot;: 20,
+    &quot;id&quot;: null
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: application/json</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;https://videogamedb.uk/api/v2/videogame&#39; -H &#39;Accept: application/json&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;category&quot;: &quot;Shgoter&quot;,
+    &quot;name&quot;: &quot;MyAwesomeGame&quot;,
+    &quot;rating&quot;: &quot;Mature&quot;,
+    &quot;releaseDate&quot;: &quot;2018-01-01&quot;,
+    &quot;reviewScore&quot;: 20,
+    &quot;id&quot;: null
+}&#39;
+    </div>
+
