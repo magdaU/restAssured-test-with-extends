@@ -1,0 +1,33 @@
+<div>POST to https://videogamedb.uk/api/v2/videogame</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;category&quot;: &quot;Platform&quot;,
+    &quot;name&quot;: &quot;Mario&quot;,
+    &quot;rating&quot;: &quot;Mature&quot;,
+    &quot;releaseDate&quot;: &quot;2022-05-04&quot;,
+    &quot;reviewScore&quot;: 89
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: application/json</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;https://videogamedb.uk/api/v2/videogame&#39; -H &#39;Accept: application/json&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;category&quot;: &quot;Platform&quot;,
+    &quot;name&quot;: &quot;Mario&quot;,
+    &quot;rating&quot;: &quot;Mature&quot;,
+    &quot;releaseDate&quot;: &quot;2022-05-04&quot;,
+    &quot;reviewScore&quot;: 89
+}&#39;
+    </div>
+
