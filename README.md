@@ -4,7 +4,7 @@ A Java-based API test automation project using REST Assured, focused on function
 
 The project demonstrates a layered approach to API test automation against publicly available REST APIs, with an emphasis on test coverage, maintainability, risk-based decisions and reliable reporting.
 
-[![Allure Report](https://img.shields.io/badge/Allure_Report-view%20results-orange)](https://magdau.github.io/restAssured-test-with-extends/)
+[![Allure Report](https://img.shields.io/badge/Allure_Report-view%20results-brightgreen)](https://magdau.github.io/restAssured-test-with-extends/)
 [![CI](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml/badge.svg)](https://github.com/magdaU/restAssured-test-with-extends/actions/workflows/allure-report.yml)
 
 **Live Allure Report:** https://magdau.github.io/restAssured-test-with-extends/  
