@@ -3,7 +3,9 @@ package config;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.Before;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -16,6 +18,16 @@ import static org.hamcrest.Matchers.equalTo;
 @Feature("Football API - Negative Tests")
 public class FootballNegativeTests {
 
+    @Before
+    public void resetRestAssured() {
+        // Other test classes (e.g. VideoGameConfig) set RestAssured.requestSpecification /
+        // responseSpecification as JVM-static globals with an expectStatusCode(200). Surefire's
+        // default class run order is filesystem-dependent and differs between OSes, so whether
+        // this leftover spec leaks into this test depends on which platform runs it. Reset here
+        // so the assertion below is the only thing that decides pass/fail.
+        RestAssured.reset();
+    }
+
     @Test
     @Story("Authentication")
     @Description("Returns a client error, not 200, when calling with an invalid X-Auth-Token")
@@ -27,8 +39,6 @@ public class FootballNegativeTests {
                 .when()
                 .get("/teams/57");
 
-        // 429 included alongside the expected 400/403: football-data.org rate-limits
-        // shared GitHub Actions runner IPs independently of the (invalid) token sent.
-        assertThat(response.statusCode(), anyOf(equalTo(400), equalTo(403), equalTo(429)));
+        assertThat(response.statusCode(), anyOf(equalTo(400), equalTo(403)));
     }
 }
