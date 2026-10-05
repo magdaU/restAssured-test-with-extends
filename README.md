@@ -122,11 +122,11 @@ Every push to `main` runs the non-Football suite via GitHub Actions and publishe
 
 **Report preview** (Overview: pass rate, per-suite breakdown, historical trend, executor):
 
-![Allure report overview](screenshots/allure-overview.png)
+<a href="https://magdau.github.io/restAssured-test-with-extends/"><img src="screenshots/allure-overview.png" alt="Allure report overview" width="600"></a>
 
 **API under test** — [Video Game DB Swagger](https://videogamedb.uk/swagger-ui/index.html) (read-only mode: write operations are accepted but not persisted):
 
-[![Video Game DB Swagger UI](screenshots/videogame-swagger.png)](https://videogamedb.uk/swagger-ui/index.html)
+<a href="https://videogamedb.uk/swagger-ui/index.html"><img src="screenshots/videogame-swagger.png" alt="Video Game DB Swagger UI" width="600"></a>
 
 The k6 load test runs on manual trigger only (`Actions → k6 Load Test → Run workflow`), to avoid hammering the shared sandbox API.
 
