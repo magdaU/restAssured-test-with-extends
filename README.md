@@ -122,11 +122,11 @@ Every push to `main` runs the non-Football suite via GitHub Actions and publishe
 
 **Report preview** (Overview: pass rate, per-suite breakdown, historical trend, executor):
 
-![Allure report overview](docs/images/allure-overview.png)
+![Allure report overview](screenshots/allure-overview.png)
 
 **API under test** — [Video Game DB Swagger](https://videogamedb.uk/swagger-ui/index.html) (read-only mode: write operations are accepted but not persisted):
 
-![Video Game DB Swagger UI](docs/images/videogame-swagger.png)
+![Video Game DB Swagger UI](screenshots/videogame-swagger.png)
 
 The k6 load test runs on manual trigger only (`Actions → k6 Load Test → Run workflow`), to avoid hammering the shared sandbox API.
 
