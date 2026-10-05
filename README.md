@@ -120,6 +120,14 @@ k6 run performance/videogame-load-test.js
 
 Every push to `main` runs the non-Football suite via GitHub Actions and publishes an Allure report — with historical trend, Environment, and Categories widgets — to GitHub Pages (`gh-pages` branch). CI also runs (tests only, no deploy) on `feature/**` and `fix/**` branches.
 
+**Report preview** (Overview: pass rate, per-suite breakdown, historical trend, executor):
+
+![Allure report overview](screenshots/allure-overview.png)
+
+**API under test** — [Video Game DB Swagger](https://videogamedb.uk/swagger-ui/index.html) (read-only mode: write operations are accepted but not persisted):
+
+![Video Game DB Swagger UI](screenshots/videogame-swagger.png)
+
 The k6 load test runs on manual trigger only (`Actions → k6 Load Test → Run workflow`), to avoid hammering the shared sandbox API.
 
 ---
